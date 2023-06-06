@@ -1,0 +1,98 @@
+.success{
+  background-color: #1E60E1!important;
+}
+.container{
+
+  .overlay{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2;
+    cursor: pointer;
+
+
+  }
+  .formrf{
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    position: fixed;
+    top: 100px;
+    left: 16%;
+    right: 16%;
+    bottom: 200px;
+    z-index: 10000;
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 16px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    h1{
+      letter-spacing: 4px;
+      color: #1E60E1;
+      text-align: center;
+      margin: {
+        top: 70px;
+        bottom: 40px;
+      };
+      font-weight: 700;
+    }
+    .rankid{
+      display: flex;
+      justify-content: center;
+      h2{
+        margin-left: 14px;
+        display: flex;
+        align-items: center;
+        margin-bottom:0 ;
+      }
+      >input{
+        font-weight: 700;
+        margin-left: 16px;
+        font-size: 24px;
+        color: #1E60E1;
+      }
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 20px;
+      .row-control{
+        display: flex;
+        flex: 33.3333%;
+        justify-content: center;
+      }
+      .posision{
+        position: absolute;
+        top: 70px;
+        left: 4%;
+
+      }
+
+    }
+    .row-actions{
+      display: flex;
+
+      flex-wrap: wrap;
+      justify-content: end;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      margin-right: 12px;
+      button{
+
+        margin: 10px 20px;
+      }
+    }
+
+  }
+  .formrf::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+  }
+
+
+}

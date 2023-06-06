@@ -1,0 +1,50 @@
+@import 'src/app/shared/mixin.scss';
+@import 'src/app/shared/variables.scss';
+
+html{
+  font-family: Lato, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* mobile & tablet */
+@media (max-width:1023px){
+  body{
+    margin: 0;
+  }
+  .container{
+    display: block;
+    .aside{
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+    }
+    .aside::-webkit-scrollbar{
+      width: 0 !important;
+      display: none!important;
+    }
+    .main{
+      position: absolute;
+      width: 100%!important;
+    }
+  }
+}
+/* >= Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
+/* mobile */
+@media (max-width: 739px) {
+  
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

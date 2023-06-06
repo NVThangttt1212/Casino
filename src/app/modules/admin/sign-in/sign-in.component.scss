@@ -1,0 +1,31 @@
+.container{
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EEEEEE;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  .sign-in-form{
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    background-color: #fff;
+    height: 300px;
+    padding: 50px;
+
+    h2{
+      text-align: center;
+      font-weight: 700;
+    }
+    .row-actions{
+      margin-top: 38px;
+
+    }
+    .row-control{
+      width: 200px;
+    }
+  }
+}

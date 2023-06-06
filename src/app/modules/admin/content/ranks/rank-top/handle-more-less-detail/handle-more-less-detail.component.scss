@@ -1,0 +1,86 @@
+@import "../../../../../../shared/mixin.scss";
+@import "../../../../../../shared/variables.scss";
+
+
+.handleMoreLessDetail{
+  display: flex;
+  padding: 20px;
+  ul{
+    padding-left: 0!important;
+  }
+    .activeDetail{
+      display: block;
+    }
+    .more__details{
+      margin-bottom: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #E9EBEE;
+      padding-left: 24px;
+      display: flex;
+
+      .more__details--gift{
+        width: 50%;
+        .more__details--gift-heading{
+          display: flex;
+          align-items: center;
+          img{
+            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        ul{
+          margin-top: 12px;
+          .more__details--gift-text{
+            margin-left: 24px;
+            font-size: $font-SizeText;
+            font-weight: $font-weight400;
+            line-height: 28px;
+            span{
+              font-weight: $font-weight700;
+            }
+          }
+        }
+      }
+      .more__details--info {
+        width: 50%;
+        .more__details--info-heading {
+          display: flex;
+          align-items: center;
+          img{
+            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+        ul{
+          margin-top: 12px;
+          .more__details--info-text{
+            margin-left: 24px;
+            font-size: $font-SizeText;
+            font-weight: $font-weight400;
+            line-height: 28px;
+          }
+        }
+
+      }
+    }
+}
+
+// phần responsive--------------------------------------
+/* mobile */
+@media (max-width: 739px){
+  .handleMoreLessDetail{
+    .more__details{
+      padding-left: 12px;
+      display: block;
+      .more__details--gift{
+        width: 100%;
+        margin-top: 18px;
+      }
+      .more__details--info{
+        width: 100%;
+      }
+    }
+  }
+}

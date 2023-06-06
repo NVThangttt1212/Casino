@@ -1,0 +1,24 @@
+<div class="slider">
+    <div class="slider__tab--overflowX">
+        <div class="slider__tab">
+          <button *ngFor="let tab of tabs; let i = index"
+                    class="slider__tab--btn"
+                    [ngClass]="{'activeBtn': activeTab === i}"
+                    (click)="onTabClick(i)">{{tab.name}} <span>({{tab.count}})</span>
+          </button>
+        </div>
+      </div>
+      <div #showText class="slider__text" >
+        <p *ngFor="let tab of tabs; let i = index"
+            class="slider__text--item"
+            #textItems
+            [ngClass]="{'activeText': activeTab === i}">{{tab.content}}
+        </p>
+        <img #img src="../../../../assets/img/Rectangle%2025.png" alt="mờ dần">
+      </div>
+
+    <div class="slider__btn" #btn >
+        <button #showMore (click)="test1()" class="showMore">Show more<i class="fas fa-angle-down"></i></button>
+        <button #showLess (click)="test2()" class="showLess">Show less<i class="fas fa-chevron-up"></i></button>
+    </div>
+</div>

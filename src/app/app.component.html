@@ -1,0 +1,56 @@
+<div  class="container" #container>
+    <aside  class="aside" *ngIf="showAsider">
+        <div class="scollY">
+        <section class="logo" (click)="clickImg()">
+            <img src="./assets/img/logo.png" alt="">
+        </section>
+        <section class="aside__section" *ngFor="let item of apiMenu; let i = index">
+            <ul class="aside__list">
+                <li class="aside__list--item">
+                    <div class="aside__list--item-img">
+                        <img src="{{item.imgMenu}}" alt="chip">
+                    </div>
+                    <div class="aside__list--item-icon" (click)="toggleSubMenu(i)">
+                        <span>{{item.nameMenu}}</span>
+                        <i class="icon-down fas fa-chevron-down" [ngStyle]="{'display': istoggle[i] ? 'none' : 'block'}"></i>
+                        <i class="icon-up fas fa-chevron-up" [ngStyle]="{'display': istoggle[i] ? 'block' : 'none'}"></i>
+                    </div>
+                </li>
+
+                <ul class="subAside__list"
+                    [ngClass]="{'activeAside' : activeTab === i}"
+                    *ngIf="istoggle[i]">
+                    <li *ngFor="let itemSub of item.subMenu" class="subAside__list--item">{{itemSub}}</li>
+                </ul>
+            </ul>
+        </section>
+        <section class="aside__section">
+            <ul class="aside__list">
+                <li class="aside__list--item">
+                    <div class="aside__list--item-img">
+                        <img src="./assets/img/blog-blogger.png" alt="chip">
+                    </div>
+                    <div class="aside__list--item-icon">
+                        <span>Blog</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    </aside>
+    <main #main class="main" [ngStyle]="{'width': showAsider === false ? '100%' : ''}">
+        <div class="overlay"
+             (click)="clickOverlay()"
+             *ngIf="showAsider"
+             #overlay
+             ></div>
+      <router-outlet></router-outlet>
+        <app-header></app-header>
+        <app-mess> </app-mess>
+        <app-slider></app-slider>
+        <app-content></app-content>
+        <app-footer></app-footer>
+
+    </main>
+
+</div>

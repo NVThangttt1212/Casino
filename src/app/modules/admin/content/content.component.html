@@ -1,0 +1,274 @@
+<div class="content">
+    <section class="content__filter">
+        <div class="content__filter--active">
+            <div class="content__active--item">
+                <div class="content__active--item-active">
+                    <p>Active filters: Casino Accepts Players from:</p>
+                    <span>Canada<i class="fas fa-times"></i></span>
+                </div>
+                <div class="content__active--item-casino">
+                    <p>Casino Games:</p>
+                    <span>Slots<i class="fas fa-times"></i></span>
+                    <button>Reset fIlters</button>
+                </div>
+            </div>
+            <div class="content__active--item">
+                <div class="content__active--item-flex">
+                    <img src="../../../../assets/img/Group%20(2).png" alt="">
+                    <p class="fill">Filter (2)</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content__filter--showing">
+            <p>Showing casinos: Accepting players from Greece with Reputation rating above 7.5</p>
+            <p><span>Sort: </span>Recommended</p>
+        </div>
+    </section>
+    <section class="content__ranking">
+        <div class="ranking__list" #contentRanking>
+          <router-outlet></router-outlet>
+        </div>
+        <div class="rank__list--btn">
+            <button class="rank__moreless--btn"  >Show 18 more</button>
+        </div>
+        <div class="rank__list--pages">
+            <div class="rank__list--pagesBtn">
+                <button class="btn__page"
+                        *ngFor="let item of btnNext; let i = index"
+                        [ngClass]="{'activeBtnPage' : activeBtn === i}"
+                        (click)="clickNext(i)">
+                        {{item}}
+                </button>
+
+                <button class="btn__page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="rank__pages--describe">
+                <p>Showing results 1 - 18 of <span>4926</span></p>
+            </div>
+        </div>
+        <div class="nextpageMobi">
+            <button class="PreviousMobi"><i class="fas fa-chevron-left"></i>Previous</button>
+            <button class="nextMobi">Next<i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="content__blogs">
+        <div class="content__blog--menu">
+            <ul>
+                <li  *ngFor=" let item of nameMenus, let i = index"
+                     (click)="onClickMenu(i)"
+                     id="i+1"
+                     class="content__blog--item"
+                     [ngClass]="{'activeBlog': activeMenu === i}" >
+                     <a href="{{item.her}}">{{item.name}}</a></li>
+
+            </ul>
+        </div>
+
+        <div class="content__blogs--list">
+            <section class="content__blogs--introduce">
+                <p>This list of online casinos is our best guess for casinos that will best suit your needs. The top positions are reserved for secure casinos with a perfect reputation, lots of players and a low ratio of unfairly resolved complaints.
+                </p>
+                <p>
+                    If you have more specific needs, feel free to use the tabs with various casino options and our advanced filters.
+                </p>
+            </section>
+            <section *ngFor="let apiBlog of apiBlogHTC; let i = index" id="{{apiBlog.id}}" class="content__list--blog">
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">
+                        {{apiBlog.Heading}}
+                    </h3>
+                    <i class="up__content--blog fas fa-chevron-up" ></i>
+                    <i class="down__content--blog fas fa-chevron-down" ></i>
+                </div>
+                <div class="blog__content" >
+                    <p class="blog__text">
+                        {{apiBlog.description}}
+                    </p>
+                    <ul>
+                        <li *ngFor="let itemLi of apiBlog.list">{{itemLi}}</li>
+
+                    </ul>
+                    <p class="blog__text">If you are interested in the details, you can check out our article "How to choose an online casino?".</p>
+                </div>
+            </section>
+            <section *ngFor="let apiBlog of apiBlogTCU; let i = index " id="{{apiBlog.id}}" class="content__list--blog" >
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">
+                        {{apiBlog.Heading}}
+                    </h3>
+                    <i class="up__content--blog fas fa-chevron-up"></i>
+                    <i class=" down__content--blog fas fa-chevron-down"></i>
+                </div>
+                <div class="blog__content">
+                    <p class="blog__text" *ngFor="let item of apiBlog.description">
+                        {{item}}
+                    </p>
+
+                    <ul>
+                        <li *ngFor="let itemli of apiBlog.list">{{itemli}}</li>
+                    </ul>
+                </div>
+            </section>
+            <section *ngFor="let apiBlog of apiBlog; let i = index" class="content__list--blog">
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">
+                        {{apiBlog.Heading}}
+                    </h3>
+                    <i class="up__content--blog fas fa-chevron-up"></i>
+                    <i class=" down__content--blog fas fa-chevron-down"></i>
+                </div>
+                <div class="blog__content">
+                    <p class="blog__text" *ngFor="let item of apiBlog.description">
+                       {{item}}
+                    </p>
+
+                </div>
+            </section>
+            <section *ngFor="let apiBlog of apiBlogHWS; let i = index" id="{{apiBlog.id}}" class="content__list--blog">
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">
+                        {{apiBlog.Heading}}
+                    </h3>
+                    <i class="up__content--blog fas fa-chevron-up"></i>
+                    <i class=" down__content--blog fas fa-chevron-down"></i>
+                </div>
+                <div class="blog__content">
+                    <p class="blog__text" *ngFor=" let item of apiBlog.description">
+                        {{item}}
+                    </p>
+
+                    <div class="content__blog--note" *ngFor="let item of apiBlog.note">
+                        <img src="{{item.img}}" alt="note">
+                        <p class="blog__text--note">
+                            {{item.textNote}}
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section *ngFor="let apiBlog of apiBlogWHC; let i = index" id="{{apiBlog.id}}" class="content__list--blog">
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">
+                        {{apiBlog.Heading}}
+                    </h3>
+                    <i class="up__content--blog fas fa-chevron-up"></i>
+                    <i class=" down__content--blog fas fa-chevron-down"></i>
+                </div>
+                <div class="blog__content">
+                    <p class="blog__text" *ngFor="let item of apiBlog.description">
+                        {{item}}
+                    </p>
+                    <div *ngFor="let item of apiBlog.list">
+                        <span >{{item.Heading}}</span>
+                    <p class="blog__text">
+                        {{item.content}}
+                    </p>
+                    </div>
+
+
+                </div>
+            </section>
+            <section *ngFor="let apiBlog of apiBlogFillter; let i = index " id="{{apiBlog.id}}" class="content__list--blog" >
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">
+                        {{apiBlog.heading}}
+                    </h3>
+                    <i class="up__content--blog fas fa-chevron-up"></i>
+                    <i class=" down__content--blog fas fa-chevron-down"></i>
+                </div>
+                <div class="blog__content">
+                    <p class="blog__text">
+                       {{apiBlog.description}}
+                    </p>
+                    <ul class="blog__filter--list">
+                        <li class=" blog__filter--item" *ngFor="let item of apiBlog.list">
+                            <img src="{{item.img}}" alt="check">
+                            <p>
+                                <span>{{item.heading}}</span>
+                               {{item.text}}
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="table__border">
+                    <table class="blog__filter--table" *ngFor="let item of apitable ">
+                    <tr>
+                        <th *ngFor="let i of item.title">{{i}}</th>
+                    </tr>
+                    <tr *ngFor="let colum of item.row">
+                        <td>{{colum.colum1}}</td>
+                        <td>{{colum.colum2}}</td>
+                        <td>{{colum.colum3}}</td>
+                    </tr>
+
+                </table>
+                </div>
+            </section>
+            <section class="content__list--blog"  *ngFor="let api of apiFAQ; let i = index">
+                <div class="content__blog--title" >
+                    <h3 class="blog__heading">{{api.headingMain}}</h3>
+                    <i class="up__content--blog fas fa-chevron-up"></i>
+                    <i class=" down__content--blog fas fa-chevron-down"></i>
+                </div>
+                <div class="blog__content">
+                    <p class="blog__text">{{api.description}}</p>
+                    <ul class="content__list--blog-faq">
+                        <li class="content__blog--item-faq" *ngFor="let item of api.sub; let i = index">
+                            <div class="content__blog--item-heading" (click)="onFaqClick(i)">
+                                <h4>{{item.heading}}</h4>
+                                <img [ngStyle]="{'display': isFaq[i] ? 'block' : 'none'}" class="moreDescribeFaq" src="../../../../assets/img/trừ.png" alt="hiện">
+                                <img [ngStyle]="{'display': isFaq[i] ? 'none' : 'block'}" class="lessDescribeFaq" src="../../../../assets/img/cong.png" alt="ẩn">
+                            </div>
+
+                            <div class="content__blog--item--describe"
+
+                                *ngIf="isFaq[i]">
+                                <p>{{item.content}}</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+    </section>
+    <section class="table__bordermobi">
+        <table class="blog__filter--table" *ngFor="let item of apitable">
+            <tbody>
+                <tr>
+                    <th *ngFor="let i of item.title">{{i}}</th>
+                </tr>
+                <tr *ngFor="let colum of item.row">
+                    <td>{{colum.colum1}}</td>
+                    <td>{{colum.colum2}}</td>
+                    <td>{{colum.colum3}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <button class="moreMobile">
+        <h3>More</h3>
+        <i class="Content__Mobi--less fas fa-chevron-down"></i>
+        <i class="Content__Mobi--more fas fa-chevron-up"></i>
+    </button>
+
+    <section class="filter__mobile">
+            <div class="clarify__list--filter">
+                <button class="clarify__filter--item">
+                     <img src="../../../../assets/img/fil.png" alt="filter">
+                        Filter
+                    <span>(2)</span>
+                </button>
+
+            </div>
+            <div class="clarify__list--sort">
+                <button class="clarify__sort--item">
+                    <img src="../../../../assets/img/sort.png" alt="sort">
+                    Sort
+                </button>
+            </div>
+    </section>
+
+</div>

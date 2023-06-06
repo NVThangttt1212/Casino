@@ -1,0 +1,20 @@
+<footer class="footer">
+    <section>
+        <div class="footer__list">
+            <span *ngFor="let item of apiFoter ;let i = index"
+                  [ngClass]="{'activeFooter': active === i}"
+                  (click)="activeClick(i)"
+                  class="footer__list--item ">{{item}}</span>
+
+        </div>
+        <div class="footer__describe">
+            <p>DISCLAIMER: Online Wagering is illegal in some Jurisdictions. It is your responsibility to check your  local regulations before playing online. PlayUnited.com takes no responsibility for your actions. PlayUnited.com 2019 All rights reserved.</p>
+        </div>
+    </section>
+    <section>
+        <img src="../../../../assets/img/ft.png" alt="ảnh footer">
+    </section>
+    <div class="footer__describe--tablet">
+        <p>DISCLAIMER: Online Wagering is illegal in some Jurisdictions. It is your responsibility to check your  local regulations before playing online. PlayUnited.com takes no responsibility for your actions. PlayUnited.com 2019 All rights reserved.</p>
+    </div>
+</footer>

@@ -1,0 +1,46 @@
+<header class="header" #widthHeader>
+    <nav class="header__nav">
+        <div class="header__nav--menu">
+            <i class="fas fa-bars" (click)="onclickicon()"></i>
+            <div class="header__nav--span">
+                <span>PlayUnited.com</span>
+                <span>></span>
+                <span>Casinos</span>
+            </div>
+            <div class="header__nav--img">
+                <img class="logoTablet" src="../../../../assets/img/logotablet.png" alt="logo tablet">
+                <img class="logoMobile" src="../../../../assets/img/chip%201.png" alt="logo mobile">
+            </div>
+        </div>
+
+        <div class="header__nav--right">
+
+            <div class="header__right__lang">
+                <div class="header__right__lang--list">
+                    <div class="header__right__lang--itemE" onclick="SelectedLangE()">
+                        <img src="../../../../assets/img/MY.png" alt="cờ mỹ">
+                        <span>ENG</span>
+                    </div>
+                    <div class="header__right__lang--itemVN" onclick="SelectedLangVN()">
+                        <img src="../../../../assets/img/VN.png" alt="cờ VN">
+                        <span>VN</span>
+                    </div>
+                </div>
+                <div class="iconLang" onclick="handleLang()">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="header__right--search">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="header__nav--span_tabMo">
+        <span>PlayUnited.com</span>
+        <span>></span>
+        <span>Casinos</span>
+    </div>
+    <div class="header__heading">
+        <h1>Recommend for you: <span class="casinosPc">573 casinos</span><span class="casinosMobi">1900 casinos</span></h1>
+    </div>
+</header>

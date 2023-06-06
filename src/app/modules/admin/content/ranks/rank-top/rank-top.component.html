@@ -1,0 +1,126 @@
+
+<div *ngIf="dataRanks">
+  <div>
+    <div class="ranking__list--top" #widthrank *ngFor="let api of dataRanks ; let i = index">
+    <div class="ranking__item--navbar-top4" [ngStyle]="{'background-color': api.colorNav}">
+        <img src="{{api.imgNav}}" alt="">
+    </div>
+    <div class="rank__item--info">
+        <section class="info__top">
+            <div class="info__top--imgMobi">
+                <img src ="../../../../../../assets/img/1.png" alt="">
+            </div>
+            <div class="info__top--rating">
+                <h2><span class="top">{{api.top}}</span>
+                    <span class="info__top--rating-pctl">{{api.infoTop}}</span>
+                    <span class="info__top--rating-mobile">{{api.infoTopMobi}}</span>
+                </h2>
+            </div>
+            <div class="info__top--btn">
+                <button>
+                    <img src="../../../../../../assets/img/Vector.png" alt="">
+                    Featured
+                </button>
+                <div class="info__top--btn-tabMobi">
+                    <button>
+                        <img src="../../../../../../assets/img/gaming-ribbon-10.png" alt="">
+                        9.33/10
+                    </button>
+                    <div class="info__top--btn-reached">
+                        <span>PERFECT</span>
+                        <p>Reputation</p>
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="info__top--btn-mobile">
+                <img src="../../../../../../assets/img/mo.png" alt="">
+            </div>
+
+
+        </section>
+        <div class="content__rank--top4-tabmobi">
+            <div class="content__rank--top4">
+                <section class="info__param">
+                    <div class="info__param--TabMobi">
+                        <div class="info__top--btn-tabMobile">
+                            <button>
+                                <img src="../../../../../../assets/img/gaming-ribbon-10.png" alt="">
+                                9.33/10
+                            </button>
+                            <div class="info__top--btn-reached">
+                                <span>PERFECT</span>
+                                <p>Reputation</p>
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                        </div>
+                        <ul class="info__param--check">
+                            <li>
+                                <img src="../../../../../../assets/img/Vector%20(1).png" alt="check">
+                                <img src="../../../../../../assets/img/VN.png" alt="cờ">
+                                <p>Players from Greece</p>
+                            </li>
+                            <li>
+                                <img src="../../../../../../assets/img/Vector%20(1).png" alt="check">
+                                <img src="../../../../../../assets/img/MY.png" alt="cờ">
+                                <p>English website</p>
+                            </li>
+                            <li>
+                                <img src="../../../../../../assets/img/Vector%20(1).png" alt="check">
+                                <img src="../../../../../../assets/img/MY.png" alt="cờ">
+                                <p>English customer support</p>
+                            </li>
+                            <li>
+                                <img src="../../../../../../assets/img/x.png" alt="cờ">
+                                <img src="../../../../../../assets/img/surface1.png" alt="check">
+                                <p>Live chat</p>
+                            </li>
+                        </ul>
+                        <ul class="info__param--list">
+                            <li>34 Game Providers</li>
+                            <li>12 Payment Methods</li>
+                            <li>1 Gaming License</li>
+                            <li>VPN Not Allowed</li>
+                        </ul>
+                    </div>
+                    <div class="info__param--present"
+                        [style.border]="'5px solid ' + api.colorBorderPresent"
+                        [ngStyle]="{'display': i == 0 || (i+1) % 4 != 0 ? 'block' : 'none'}">
+                        <img src="../../../../../../assets/img/gift-box.png" alt="quà" [ngStyle]="{'background-color': i == 0 ? '#E8317E' : '#F6BF31' }">
+                        <button class="btnPc__present-top" [ngStyle]="{'background-color': i == 0 ?'#E8317E': '#F6BF31'}">Exclusive</button>
+                        <button class="btnMb__present-top" [ngStyle]="{'background-color': i == 0 ?'#E8317E': '#F6BF31'}">Exclusive</button>
+                        <div class="text__param--present">
+                            <p [ngStyle]="{'color': i==0 ? '#E8317E' : '#000' }">{{api.textPresent}}</p>
+                        </div>
+                        <span>T&C’s Apply</span>
+                    </div>
+                </section>
+                <section class="info__btn mt">
+                    <button class="info__btnPc" [routerLink]="['/formRf',api.id]">Edit Casino</button>
+                    <button class="info__btnMobi">Visit</button>
+                    <button>Review</button>
+                    <div class="info__btn--list" (click)="toggleDetail(i)">
+                        <p style="margin-bottom: 0" class="more__details--pc">{{ showDetails[i] ? 'Less Details' : 'More Details' }}</p>
+                        <p style="margin-bottom: 0" class="more__details--mb">{{ showDetails[i] ? 'Less' : 'More' }}</p>
+                        <i  class="iconMoreDetail fas fa-chevron-down"  [ngStyle]="{'display': showDetails[i] ? 'none' : 'block'}" ></i>
+                        <i class="iconLessDetail fas fa-chevron-up"  [ngStyle]="{'display': showDetails[i] ? 'block' : 'none'}"></i>
+                    </div>
+                </section>
+            </div>
+            <div class="info__param--present-top4"
+                [style.border]="'5px solid ' + api.colorBorderPresent"
+                [ngStyle]="{'display': (i+1) >= 4 && (i+1) % 4 == 0 ? 'block': 'none'}">
+                <img src="../../../../../../assets/img/gift-box.png" alt="quà" [ngStyle]="{'background-color': i == 0 ? '#E8317E': '#F6BF31'}">
+                <button class="btnPc__present-top4"   [ngStyle]="{'background-color': i == 0 ? '#E8317E': '#F6BF31'}">Exclusive</button>
+                <button class="btnMb__present-top4"   [ngStyle]="{'background-color': i == 0 ? '#E8317E': '#F6BF31'}">Exclusive</button>
+                <div class="text__param--present">
+                    <p>{{api.textPresent}}</p>
+                </div>
+                <span>T&C’s Apply</span>
+            </div>
+        </div>
+        <app-handle-more-less-detail *ngIf="ishandleDetail[i]"></app-handle-more-less-detail>
+    </div>
+</div>
+  </div>
+</div>

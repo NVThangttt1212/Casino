@@ -1,0 +1,258 @@
+@import '../../../shared/mixin';
+@import '../../../shared/variables';
+
+.header{
+    .header__nav{
+    display: flex;
+    justify-content: space-between;
+
+    .header__nav--menu{
+        display: flex;
+        .header__nav--img{
+        display: none;
+        }
+        i{
+        cursor: pointer;
+        font-size: 24px;
+        padding: 16px;
+        color: $color-Main;
+        &:hover{
+            transform: rotate(3.142rad);
+        }
+        }
+        span{
+        line-height: 56px;
+        font-size: $font-SizeText;
+        }
+        :nth-child(3){
+        margin: 0 4px;
+        }
+    }
+    .header__nav--right{
+        display: flex;
+        height: 56px;
+        .dangky{
+          margin-right: 20px;
+          display: flex;
+          align-items: center;
+        }
+        .header__right__lang{
+        display: flex;
+        cursor: pointer;
+        line-height: 56px;
+        .header__right__lang--itemVN{
+            display: none;
+        }
+        .iconLang{
+            font-size: $font-SizeText;
+            display: flex;
+            justify-content: center;
+            padding: {
+            top: 20px;
+            right: 20px;
+            bottom: 20px;
+            left: 10px;
+
+            };
+            &:hover{
+            color: $color-Main;
+            }
+        }
+        img{
+            height: 15px;
+            margin-right: 10px;
+        }
+        span{
+            font-size: 18px;
+            }
+        }
+
+        .header__right__lang--item{
+            display: none;
+        }
+        .activeLang{
+            display: block;
+        }
+        }
+
+        .header__right--search{
+        margin-right: 36px;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i{
+            cursor: pointer;
+            font-size: 24px;
+            padding: 11px;
+        }
+        &:hover{
+            color: red;
+            transform: scale3d(1.2, 1.2, 1.2);
+        }
+        }
+    }
+    .header__nav--span_tabMo{
+    display: none;
+    margin: {
+        left: 28px;
+        top: 13px;
+    };
+    span{
+        font-size: $font-SizeText;
+        font-weight: $font-weight400;
+        line-height: 19px;
+    }
+    }
+    .header__heading{
+        margin: {
+        top: 30px;
+        bottom: 30px;
+        left: 54px;
+    }
+    font-family: Oswald;
+    text-transform: uppercase;
+    h1,span,.casinosMobi{
+        font-size: 32px;
+        font-weight: $font-weight700;
+        line-height: 47px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    span{
+        color: $color-Main;
+    }
+    .casinosMobi{
+        display: none;
+    }
+    }
+}
+
+// phần responsive -----------------------------------------------------------
+
+/* mobile & tablet */
+@media (max-width:1023px){
+    .header{
+    .header__nav{
+      background-color: #0C1245;
+      color: #fff;
+      .header__nav--menu{
+        i{
+          color: #fff;
+        }
+        .header__nav--span{
+          display: none;
+        }
+        .header__nav--img{
+          img{
+            height: 100%;
+          }
+          display: flex;
+          height: 56px;
+        }
+      }
+      .header__nav--right{
+        .header__right--search{
+          margin-right: 12px;
+        }
+      }
+    }
+    .header__nav--span_tabMo{
+      display: block;
+    }
+  }
+}
+
+
+  /* >= Tablet */
+  @media (min-width: 740px) and (max-width: 1023px){
+    .header{
+    .header__nav{
+        align-items: center;
+      .header__nav--menu{
+        align-items: center;
+        .header__nav--img{
+          padding: 6px;
+          .logoTablet{
+            display: block;
+          }
+          .logoMobile{
+            display: none;
+          }
+        }
+      }
+    }
+    .header__heading{
+      margin: {
+        left: 28px;
+      };
+    }
+  }
+  }
+
+
+/* mobile */
+@media (max-width: 739px){
+    .header{
+    .header__nav{
+        height: 56px;
+        align-items: center;
+      .header__nav--menu{
+        height: 56px;
+        .header__nav--img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          padding: {
+
+
+          };
+          .logoTablet{
+            display: none;
+          }
+          .logoMobile{
+            height: 29px;
+            display: block;
+          }
+        }
+
+      }
+      .header__right--search{
+        margin: 0;
+      }
+      .header__right__lang{
+        .iconLang{
+          padding-right: 10px;
+        }
+      }
+    }
+    .header__nav--span_tabMo,
+    .header__heading{
+      margin-left: 12px;
+    }
+    .header__heading{
+      h1{
+        display: flex;
+        font-family: Oswald;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        span {
+          font-family: Oswald;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 30px;
+        }
+        .casinosMobi{
+          display: block;
+          margin-left: 4px;
+        }
+        .casinosPc{
+          display: none;
+        }
+      }
+    }
+  }
+}
+

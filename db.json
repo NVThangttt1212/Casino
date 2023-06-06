@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "top": "#12",
+      "colorNav": "#ccc",
+      "infoTop": "thang2123",
+      "infoTopMobi": "thang12",
+      "imgnav": "/nag",
+      "colorBorderPresent": "#ccc",
+      "textPresent": "thăng hahahaha"
+    },
+    {
+      "id": 2,
+      "top": "#2",
+      "colorNav": "#147B44",
+      "infoTop": "- dunder CASINO",
+      "infoTopMobi": "- Dunder australia online casino",
+      "imgNav": "./assets/img/image 2.1.jpg",
+      "colorBorderPresent": "#F6BF31",
+      "textPresent": "121% up to $500 and 200 extra spins"
+    },
+    {
+      "id": 3,
+      "top": "#3",
+      "colorNav": "#AE0001",
+      "infoTop": "- dunder CASINO",
+      "infoTopMobi": "- Dunder australia online casino",
+      "imgNav": "./assets/img/image 2.2.png",
+      "colorBorderPresent": "#F6BF31",
+      "textPresent": "121% up to $50nd 200 extra spins"
+    },
+    {
+      "id": 4,
+      "top": "#4",
+      "colorNav": "#2A385B",
+      "infoTop": "- dunder CASINO",
+      "infoTopMobi": "- Dunder australia online casino",
+      "imgNav": "./assets/img/image 2.3.png",
+      "colorBorderPresent": "#F6BF31",
+      "textPresent": "121% up to $500 and 200 extra spins, On Game Reel and other games"
+    }
+  ]
+}

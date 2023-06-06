@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="overlay" (click)="noneOverlay()"></div>
+  <form class="formrf" [formGroup]="FormRf" (ngSubmit)="onsubmit()">
+    <h1>FORMS REACTIVE</h1>
+    <div class="flex">
+      <div class="row-control posision">
+          <div class="rankid">
+            <h2>Top:</h2>
+            <input matInput  formControlName="id" style=" pointer-events: none;"/>
+          </div>
+      </div>
+      <div class="row-control" [ngStyle]="{'display': 'none'}">
+        <mat-form-field appearance="outline" >
+          <mat-label>#Top</mat-label>
+          <input matInput placeholder="nhập top rank..." formControlName="top" />
+          <mat-error *ngIf="FormRf.get('top')?.invalid && (FormRf.get('top')?.dirty || FormRf.get('top')?.touched)">
+            <span *ngIf="FormRf.get('top')?.errors?.['required']">Không được bỏ trống</span>
+              <span *ngIf="FormRf.get('top')?.errors?.['pattern']">có ký tự # và không có chữ cái</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Color Nav</mat-label>
+          <input matInput placeholder="nhập colorNav..." formControlName="colorNav" />
+          <mat-error *ngIf="FormRf.get('colorNav')?.invalid && (FormRf.get('colorNav')?.dirty || FormRf.get('colorNav')?.touched)">
+            <span *ngIf="FormRf.get('colorNav')?.errors?.['required']">không được bỏ trống trường này</span>
+            <span *ngIf="FormRf.get('colorNav')?.errors?.['pattern']">có ký tự # và chữ với số</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Rank Name  PC</mat-label>
+          <input matInput placeholder="nhập name rank..." formControlName="infoTop" />
+          <mat-error *ngIf="FormRf.get('infoTop')?.invalid && (FormRf.get('infoTop')?.dirty || FormRf.get('ranknamepc')?.touched)">
+            <span *ngIf="FormRf.get('infoTop')?.errors?.['required']">không được bỏ trống trường này</span>
+            <span *ngIf="FormRf.get('infoTop')?.errors?.['pattern']">có cả số và chữ</span>
+            <span *ngIf="FormRf.get('infoTop')?.errors?.['minLength']">tối thiểu 6 ký tự</span>
+            <span *ngIf="FormRf.get('infoTop')?.errors?.['maxLength']">tối đa 32 ký tự</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Rank Name MB</mat-label>
+          <input matInput placeholder="nhập name rank trên mb..." formControlName="infoTopMobi" />
+          <mat-error *ngIf="FormRf.get('infoTopMobi')?.invalid && (FormRf.get('infoTopMobi')?.dirty || FormRf.get('ranknamemb')?.touched)">
+            <span *ngIf="FormRf.get('infoTopMobi')?.errors?.['required']">không được bỏ trống trường này</span>
+            <span *ngIf="FormRf.get('infoTopMobi')?.errors?.['pattern']">có cả số và chữ</span>
+            <span *ngIf="FormRf.get('infoTopMobi')?.errors?.['minLength']">tối thiểu 6 ký tự</span>
+            <span *ngIf="FormRf.get('infoTopMobi')?.errors?.['maxLength']">tối đa 32 ký tự</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Img Nav</mat-label>
+          <input matInput placeholder="nhập đường dẫn ảnh..." formControlName="imgnav" />
+          <mat-error *ngIf="FormRf.get('imgnav')?.invalid && (FormRf.get('imgnav')?.dirty || FormRf.get('imgnav')?.touched)" >
+            <span *ngIf="FormRf.get('imgnav')?.errors?.['required']">không được bỏ trống trường này</span>
+            <span *ngIf="FormRf.get('imgnav')?.errors?.['pattern']">có ký tự /</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>colorBorderPresent</mat-label>
+          <input matInput placeholder="nhập colorBorderPresent..." formControlName="colorBorderPresent" />
+          <mat-error *ngIf="FormRf.get('colorBorderPresent')?.invalid && (FormRf.get('colorBorderPresent')?.dirty || FormRf.get('colorBorderPresent')?.touched)" >
+            <span *ngIf="FormRf.get('colorBorderPresent')?.errors?.['required']">không được bỏ trống trường này</span>
+            <span *ngIf="FormRf.get('colorBorderPresent')?.errors?.['pattern']">có cả chữ và s</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>textPresent</mat-label>
+          <input matInput placeholder="nhập textPresent..." formControlName="textPresent" />
+          <mat-error *ngIf="FormRf.get('textPresent')?.invalid && (FormRf.get('textPresent')?.dirty || FormRf.get('textPresent')?.touched)" >
+            <span *ngIf="FormRf.get('textPresent')?.errors?.['required']">không được bỏ trống trường này</span>
+            <span *ngIf="FormRf.get('textPresent')?.errors?.['minLength']">tối thiểu 6 ký tự</span>
+            <span *ngIf="FormRf.get('textPresent')?.errors?.['maxLength']">tối đa 120 ký tự</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row-control row-actions">
+      <button mat-raised-button color="primary" type="button" routerLink="/">Come Back</button>
+      <button mat-raised-button color="primary" type="submit">SAVE</button>
+    </div>
+
+  </form>
+</div>
